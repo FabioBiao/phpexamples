@@ -1,13 +1,19 @@
 <?php 
+
+// get database connection
+include_once '../config/database.php';
+
 	$result = null;
 	//save into a DB 
 
+/**
 	$servername = "localhost";
 	$username = "root";
 	$password = "";
 	$dbname = "testingstuff";
 	// Create connection
 	$conn = new mysqli($servername, $username, $password,$dbname);
+**/
 
 /**
 CREATE TABLE Users (
@@ -19,6 +25,8 @@ reg_date TIMESTAMP
 
 **/
 
+	$database = new Database();
+	$conn = $database->getConnection();
 
 	// Check connection
 	if ($conn->connect_error) {
